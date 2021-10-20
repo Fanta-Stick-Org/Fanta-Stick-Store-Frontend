@@ -1,6 +1,9 @@
 import axios from "axios";
 import 'react-toastify/dist/ReactToastify.css';
 
+//const baseUrl = http://localhost:5000
+const baseUrl = 'https://thawing-plateau-10491.herokuapp.com'
+
 const getToken = () => {
     return `Bearer ${localStorage.getItem('token')}`;
 }
@@ -8,7 +11,7 @@ const getToken = () => {
 export const obtenerProductos = async (successCallback, errorCallback) => {
     const options = {
         method: 'GET',
-        url: 'http://localhost:5000/productos/',
+        url: `${baseUrl}/productos/`,
         headers: {
             Authorization: getToken()
         }
@@ -24,7 +27,7 @@ export const obtenerProductos = async (successCallback, errorCallback) => {
 export const registrarProductos = async (data, successCallback, errorCallback) => {
     const options = {
         method: 'POST',
-        url: 'http://localhost:5000/productos/',
+        url: `${baseUrl}/productos/`,
         headers: {
             'Content-Type': 'application/json', 
             Authorization: getToken()
@@ -42,7 +45,7 @@ export const registrarProductos = async (data, successCallback, errorCallback) =
 export const actualizarProducto = async (id, data, successCallback, errorCallback) => {
     const options = {
         method: 'PATCH',
-        url: `http://localhost:5000/productos/${id}/`,
+        url: `${baseUrl}/productos/${id}/`,
         headers: {
             'Content-Type': 'application/json',
             Authorization: getToken()
@@ -60,7 +63,7 @@ export const actualizarProducto = async (id, data, successCallback, errorCallbac
 export const eliminarProducto = async (id, successCallback, errorCallback) => {
     const options = {
         method: 'DELETE',
-        url: `http://localhost:5000/productos/${id}/`,
+        url: `${baseUrl}/productos/${id}/`,
         headers: {
             'Content-Type': 'application/json',
             Authorization: getToken()

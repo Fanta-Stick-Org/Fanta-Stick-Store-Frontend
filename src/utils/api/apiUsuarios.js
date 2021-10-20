@@ -1,6 +1,9 @@
 import axios from "axios";
 import 'react-toastify/dist/ReactToastify.css';
 
+//const baseUrl = ${baseUrl}
+const baseUrl = 'https://thawing-plateau-10491.herokuapp.com'
+
 const getToken = () => {
     return `Bearer ${localStorage.getItem('token')}`;
 }
@@ -9,7 +12,7 @@ const getToken = () => {
 export const obtenerUsuarios = async (successCallback, errorCallback) => {
     const options = {
         method: 'GET',
-        url: 'http://localhost:5000/usuarios/',
+        url: `${baseUrl}/usuarios/`,
         headers: {
             Authorization: getToken()
         }
@@ -23,7 +26,7 @@ export const obtenerUsuarios = async (successCallback, errorCallback) => {
 export const obtenerInfoUsuario = async (successCallback, errorCallback) => {
     const options = {
         method: 'GET',
-        url: 'http://localhost:5000/usuarios/self',
+        url: `${baseUrl}/usuarios/self`,
         headers: {
             //PASO 3 > ENVIARLE EL TOKEN AL BACKEND
             Authorization: getToken()
@@ -39,7 +42,7 @@ export const obtenerInfoUsuario = async (successCallback, errorCallback) => {
 export const registrarUsuarios = async (data, successCallback, errorCallback) => {
     const options = {
         method: 'POST',
-        url: 'http://localhost:5000/usuarios/', //url de mi base de datos
+        url: `${baseUrl}/usuarios/`, //url de mi base de datos
         headers: {
             'Content-Type': 'application/json',
             Authorization: getToken()
@@ -57,7 +60,7 @@ export const registrarUsuarios = async (data, successCallback, errorCallback) =>
 export const actualizarUsuario = async (id, data, successCallback, errorCallback) => {
     const options = {
         method: 'PATCH',
-        url: `http://localhost:5000/usuarios/${id}/`,
+        url: `${baseUrl}/usuarios/${id}/`,
         headers: {
             'Content-Type': 'application/json',
             Authorization: getToken()
@@ -75,7 +78,7 @@ export const actualizarUsuario = async (id, data, successCallback, errorCallback
 export const eliminarUsuario = async (id, successCallback, errorCallback) => {
     const options = {
         method: 'DELETE',
-        url: `http://localhost:5000/usuarios/${id}/`,
+        url: `${baseUrl}/usuarios/${id}/`,
         headers: {
             'Content-Type': 'application/json',
             Authorization: getToken()
