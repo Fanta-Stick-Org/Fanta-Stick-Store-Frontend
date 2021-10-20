@@ -152,9 +152,9 @@ const Filausuario = ({ usuario, setEjecutarConsulta }) => {
                 <>
                     <td>{infoNuevoUsuario._id}</td>
                     <td><input className='inputGeneral' type="text" value={infoNuevoUsuario.name}
-                        onChange={(e) => setInfoNuevoUsuario({ ...infoNuevoUsuario, name: e.target.value })} /></td>
+                        onChange={(e) => setInfoNuevoUsuario({ ...infoNuevoUsuario, name: e.target.value })} disabled/></td>
                     <td><input className='inputGeneral' type="email" value={infoNuevoUsuario.email}
-                        onChange={(e) => setInfoNuevoUsuario({ ...infoNuevoUsuario, email: e.target.value })} /></td>
+                        onChange={(e) => setInfoNuevoUsuario({ ...infoNuevoUsuario, email: e.target.value })} disabled/></td>
                     <td>
                         <select className='inputGeneral' defaultValue={infoNuevoUsuario.rol}
                             onChange={(e) => setInfoNuevoUsuario({ ...infoNuevoUsuario, rol: e.target.value })}>
@@ -183,7 +183,6 @@ const Filausuario = ({ usuario, setEjecutarConsulta }) => {
                     <td>{usuario.estadoUsuario}</td>
                 </>
             )}
-            {/* <td><Link to={`/admin/usuarios/actualizar/${usuario.idusuario}`}>Actualizar</Link></td> */}
             <td>
                 <div className='flex w-full justify-evenly'>
                     {edit ? (
