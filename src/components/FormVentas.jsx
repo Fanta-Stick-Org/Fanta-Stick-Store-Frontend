@@ -54,9 +54,6 @@ const FormVentas = () => {
             return null;
         }).filter((el) => el);
 
-        //console.log('lpf', listaProductosFinal);
-        //console.log('productos tabla', productosTabla);
-
         let totalVentas = 0;
         productosTabla.forEach(i => {
             totalVentas = totalVentas + i.valorTotal;

@@ -202,13 +202,13 @@ const Filaventa = ({ venta, setEjecutarConsulta }) => {
 
                                         (response) => {
                                             console.log(response.data);
-                                            toast.success('Venta modificado con éxito');
+                                            toast.success('Venta modificada con éxito');
                                             setEdit(false);
                                             setEjecutarConsulta(true);
                                         },
 
                                         (error) => {
-                                            toast.error('Error modificando el venta');
+                                            toast.error('Error modificando la venta');
                                             console.error(error);
                                         }
 
@@ -250,12 +250,12 @@ const Filaventa = ({ venta, setEjecutarConsulta }) => {
                                 (response) => {
                                     console.log(response.data);
                                     setEjecutarConsulta(true);
-                                    toast.success('Venta eliminado con éxito');
+                                    toast.success('Venta eliminada con éxito');
                                 },
 
                                 (error) => {
                                     console.error(error);
-                                    toast.error('Error eliminando el venta');
+                                    toast.error('Error eliminando la venta');
                                 }
 
                             )} className='mx-2 px-4 py-2 bg-green-400 hover:bg-green-500 

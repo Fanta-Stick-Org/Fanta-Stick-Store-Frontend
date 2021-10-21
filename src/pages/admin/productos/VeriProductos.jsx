@@ -228,12 +228,12 @@ const FilaProducto = ({ producto, setEjecutarConsulta }) => {
                                 (response) => {
                                     console.log(response.data);
                                     setEjecutarConsulta(true);
-                                    toast.success('vehículo eliminado con éxito');
+                                    toast.success('Producto eliminado con éxito');
                                 },
 
                                 (error) => {
                                     console.error(error);
-                                    toast.error('Error eliminando el vehículo');
+                                    toast.error('Error eliminando el producto');
                                 })
 
                             } className='mx-2 px-4 py-2 bg-green-400 hover:bg-green-500 
