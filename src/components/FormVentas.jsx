@@ -60,7 +60,6 @@ const FormVentas = () => {
         });
 
         const informacionConsolidada = {
-            _id: nuevaVenta._id,
             fechaVenta: nuevaVenta.fechaVenta,
             vendedor: usuarios.filter((el) => el.name === nuevaVenta.vendedor)[0],
             estadoVenta: nuevaVenta.estadoVenta,
@@ -90,10 +89,6 @@ const FormVentas = () => {
         <div className='flex sm:flex-col flex-col justify-center sm:max-w-screen-sm md:w-full h-full pt-8'>
             <form ref={form} onSubmit={submitForm} className='w-full'>
                 <div className='grid grid-cols-3 gap-2'>
-                    <div className="formGeneral">
-                        <label htmlFor="_id" className="textoGeneral">Codigo de Venta</label>
-                        <input type="text" className="inputGeneral" name="_id" placeholder="Id de Venta" required></input>
-                    </div>
                     <div className="formGeneral">
                         <label htmlFor="fechaVenta" className="textoGeneral">Fecha de venta</label>
                         <input type='date' className="inputGeneral" name="fechaVenta" required></input>
@@ -239,7 +234,7 @@ const FilaProducto = ({ prod, index, eliminarProducto, modificarProducto }) => {
     }, [producto]);
     return (
         <tr>
-            <td>{producto._id}</td>
+            <td>{producto._id.slice(19)}</td>
             <td>{producto.descripcion}</td>
             <td>
                 <input
@@ -258,13 +253,15 @@ const FilaProducto = ({ prod, index, eliminarProducto, modificarProducto }) => {
                     }}
                 />
             </td>
-            <td>{producto.valorUnitario}</td>
-            <td>{parseFloat(producto.valorTotal ?? 0)}</td>
+            <td>{'$' + producto.valorUnitario}</td>
+            <td>{'$' + parseFloat(producto.valorTotal ?? 0)}</td>
             <td>
-                <i
-                    onClick={() => eliminarProducto(producto)}
-                    className='fas fa-minus text-red-500 cursor-pointer'
-                />
+                <div className='flex justify-center'>
+                    <i
+                        onClick={() => eliminarProducto(producto)}
+                        className='fas fa-minus text-red-500 cursor-pointer hover:text-red-700 transition-all'
+                    />
+                </div>
             </td>
             <td className='hidden'>
                 <input hidden defaultValue={producto._id} name={`producto_${index}`} />

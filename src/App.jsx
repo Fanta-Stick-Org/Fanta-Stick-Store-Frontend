@@ -16,7 +16,6 @@ import RegisVentas from 'pages/admin/ventas/RegisVentas'
 import ListVentas from 'pages/admin/ventas/ListVentas'
 import VeriVentas from 'pages/admin/ventas/VeriVentas'
 import VeriUsuarios from 'pages/admin/users/VeriUsuarios'
-import Perfil from 'pages/Perfil'
 import { UserContext } from 'context/userContext'
 import { useState } from 'react'
 import PrivateRoute from 'components/PrivateRoute'
@@ -36,7 +35,7 @@ function App() {
       <UserContext.Provider value={{ userData, setUserData }}>
         <Router>
           <Switch>
-            <Route path={['/admin', '/admin/productos', '/admin/ventas', '/admin/perfil', '/admin/productos/registrar', '/admin/productos/listar',
+            <Route path={['/admin', '/admin/productos', '/admin/ventas', '/admin/productos/registrar', '/admin/productos/listar',
               '/admin/productos/maestro', '/admin/ventas/registrar', '/admin/ventas/listar',
               '/admin/ventas/maestro', '/admin/usuarios/maestro',]}>
               <PrivateLayout>
@@ -77,9 +76,6 @@ function App() {
                   </Route>
                   <Route path='/admin/ventas'>
                     <Ventas />
-                  </Route>
-                  <Route path='/admin/perfil'>
-                    <Perfil />
                   </Route>
                   <Route path='/admin'>
                     <PrivateRoute roleList={['Administrador', 'Vendedor']}>

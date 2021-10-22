@@ -19,7 +19,6 @@ const FormProducto = () => {
         console.log('el nuevo producto: ', nuevoProducto)
 
         await registrarProductos({
-            _id: nuevoProducto._id,
             descripcion: nuevoProducto.descripcion,
             valorUnitario: nuevoProducto.valorUnitario,
             estado: nuevoProducto.estado

@@ -84,13 +84,13 @@ const TablaVentas = ({ loading, listaVentas }) => {
                                 {listaVentas.map((venta) => {
                                     return (
                                         <tr key={nanoid()}>
-                                            <td>{venta._id}</td>
+                                            <td>{venta._id.slice(19)}</td>
                                             <td>{venta.fechaVenta}</td>
                                             <td>{venta.vendedor.name}</td>
                                             <td>{venta.estadoVenta}</td>
                                             <td>{venta.idCliente}</td>
                                             <td>{venta.nameCliente}</td>
-                                            <td>{venta.valorTotal}</td>
+                                            <td>{'$ ' + venta.valorTotal}</td>
                                         </tr>
                                     )
                                 })}

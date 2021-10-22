@@ -125,13 +125,13 @@ const TablaVentas = ({ loading, listaVentas, setEjecutarConsulta, busqueda }) =>
                     {ventasFilter.map((venta) => {
                         return (
                             <div key={nanoid()} className='bg-green-400 hover:bg-gray-400 m-2 shadow-xl flex flex-col p-2 rounded-xl'>
-                                <span>{venta._id}</span>
+                                <span>{venta._id.slice(19)}</span>
                                 <span>{venta.fechaVenta}</span>
                                 <span>{venta.vendedor.name}</span>
                                 <span>{venta.estadoVenta}</span>
                                 <span>{venta.idCliente}</span>
                                 <span>{venta.nameCliente}</span>
-                                <span>{venta.valorTotal}</span>
+                                <span>{'$ ' + venta.valorTotal}</span>
                             </div>
                         )
                     })}
@@ -159,7 +159,7 @@ const Filaventa = ({ venta, setEjecutarConsulta }) => {
         <tr>
             {edit ? (
                 <>
-                    <td>{infoNuevaVenta._id}</td>
+                    <td>{infoNuevaVenta._id.slice(19)}</td>
                     <td><input className='inputGeneral' type="date" value={infoNuevaVenta.fechaVenta}
                         onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, fechaVenta: e.target.value })} /></td>
                     <td><input className='inputGeneral' type="text" value={infoNuevaVenta.vendedor.name}
@@ -183,13 +183,13 @@ const Filaventa = ({ venta, setEjecutarConsulta }) => {
 
             ) : (
                 <>
-                    <td>{venta._id}</td>
+                    <td>{venta._id.slice(19)}</td>
                     <td>{venta.fechaVenta}</td>
                     <td>{venta.vendedor.name}</td>
                     <td>{venta.estadoVenta}</td>
                     <td>{venta.idCliente}</td>
                     <td>{venta.nameCliente}</td>
-                    <td>{venta.valorTotal}</td>
+                    <td>{'$ ' + venta.valorTotal}</td>
                 </>
             )}
             <td>
