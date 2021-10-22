@@ -19,7 +19,7 @@ const Sidebar = () => {
                     <Link to='/admin'><ImagenLogo /></Link>
                 </div>
                 <div className='my-7'>
-                    <Ruta icono='fas fa-user-circle' ruta='/admin/perfil/' nombre='Perfil' usuario={user}></Ruta>
+                    <Ruta icono='fas fa-user-circle' ruta='/admin' nombre='Perfil' usuario={user}></Ruta>
                     <PrivateComponent roleList={['Administrador']}>
                         <Ruta icono='fas fa-tag' ruta='/admin/productos/' nombre='Productos'></Ruta>
                     </PrivateComponent>
