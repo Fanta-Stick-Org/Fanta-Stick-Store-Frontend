@@ -2,7 +2,6 @@ import axios from "axios";
 import 'react-toastify/dist/ReactToastify.css';
 
 //const baseUrl = 'http://localhost:5000'
-//const baseUrl = 'https://thawing-plateau-10491.herokuapp.com'
 const baseUrl = 'https://fast-springs-75188.herokuapp.com'
 
 const getToken = () => {
