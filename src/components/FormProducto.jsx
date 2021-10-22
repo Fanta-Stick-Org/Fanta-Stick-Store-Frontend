@@ -46,11 +46,11 @@ const FormProducto = () => {
                     </div>
                     <div className="formGeneral">
                         <label className="textoGeneral" htmlFor="descripcion">Descripción </label>
-                        <input name="descripcion" type="text" className="inputGeneral" placeholder="Ej: Producto marca tamaño" required></input>
+                        <input name="descripcion" type="text" className="inputGeneral" placeholder="Producto marca tamaño" required></input>
                     </div>
                     <div className="formGeneral">
                         <label className="textoGeneral" htmlFor="valorUnitario">Valor Unitario </label>
-                        <input name="valorUnitario" type="number" id="valorUnitario" min={0} className="inputGeneral" placeholder="Ej: 10000" required></input>
+                        <input name="valorUnitario" type="number" id="valorUnitario" min={0} className="inputGeneral" placeholder="$ 10000" required></input>
                     </div>
                     <div className="formGeneral">
                         <label className="textoGeneral" htmlFor="estado">Estado </label>
