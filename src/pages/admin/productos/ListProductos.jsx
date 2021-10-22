@@ -77,9 +77,9 @@ const TablaProductos = ({ loading, listaProductos }) => {
                                 {listaProductos.map((producto) => {
                                     return (
                                         <tr key={nanoid()}>
-                                            <td>{producto._id}</td>
+                                            <td>{producto._id.slice(19)}</td>
                                             <td>{producto.descripcion}</td>
-                                            <td>{producto.valorUnitario}</td>
+                                            <td>{'$ ' + producto.valorUnitario}</td>
                                             <td>{producto.estado}</td>
                                         </tr>
                                     )

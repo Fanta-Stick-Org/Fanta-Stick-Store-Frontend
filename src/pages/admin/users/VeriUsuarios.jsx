@@ -120,7 +120,7 @@ const TablaUsuarios = ({ loading, listaUsuarios, setEjecutarConsulta, busqueda }
                     {usuariosFilter.map((usuario) => {
                         return (
                             <div key={nanoid()} className='bg-green-400 hover:bg-gray-400 m-2 shadow-xl flex flex-col p-2 rounded-xl'>
-                                <span>{usuario._id}</span>
+                                <span>{usuario._id.slice(19)}</span>
                                 <span>{usuario.name}</span>
                                 <span>{usuario.email}</span>
                                 <span>{usuario.rol}</span>
@@ -150,7 +150,7 @@ const Filausuario = ({ usuario, setEjecutarConsulta }) => {
         <tr>
             {edit ? (
                 <>
-                    <td>{infoNuevoUsuario._id}</td>
+                    <td>{infoNuevoUsuario._id.slice(19)}</td>
                     <td><input className='inputGeneral' type="text" value={infoNuevoUsuario.name}
                         onChange={(e) => setInfoNuevoUsuario({ ...infoNuevoUsuario, name: e.target.value })} disabled/></td>
                     <td><input className='inputGeneral' type="email" value={infoNuevoUsuario.email}
@@ -176,7 +176,7 @@ const Filausuario = ({ usuario, setEjecutarConsulta }) => {
 
             ) : (
                 <>
-                    <td>{usuario._id.slice(20)}</td>
+                    <td>{usuario._id.slice(19)}</td>
                     <td>{usuario.name}</td>
                     <td>{usuario.email}</td>
                     <td>{usuario.rol}</td>

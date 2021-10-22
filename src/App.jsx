@@ -30,7 +30,7 @@ function App() {
     <Auth0Provider
       domain="fanta-stick.us.auth0.com"
       clientId="AlYD5aX6HvZTKucwiUQBAa9kF6QgmVq4"
-      redirectUri="https://damp-lowlands-63538.herokuapp.com/admin"
+      redirectUri="http://localhost:3000/admin" //https://damp-lowlands-63538.herokuapp.com/admin
       audience='https://api-autenticacion-fanta-store'
     >
       <UserContext.Provider value={{ userData, setUserData }}>

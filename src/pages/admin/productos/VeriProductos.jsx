@@ -120,7 +120,7 @@ const TablaProductos = ({ loading, listaProductos, setEjecutarConsulta, busqueda
                             <div key={nanoid()} className='bg-green-400 hover:bg-gray-400 m-2 shadow-xl flex flex-col p-2 rounded-xl'>
                                 <span>{producto._id}</span>
                                 <span>{producto.descripcion}</span>
-                                <span>{producto.valorUnitario}</span>
+                                <span>{'$ ' + producto.valorUnitario}</span>
                                 <span>{producto.estado}</span>
                             </div>
                         )
@@ -146,7 +146,7 @@ const FilaProducto = ({ producto, setEjecutarConsulta }) => {
         <tr>
             {edit ? (
                 <>
-                    <td>{infoNuevoProducto._id}</td>
+                    <td>{infoNuevoProducto._id.slice(19)}</td>
                     <td>
                         <input className='inputGeneral' type="text" value={infoNuevoProducto.descripcion}
                             onChange={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, descripcion: e.target.value })} />
@@ -166,9 +166,9 @@ const FilaProducto = ({ producto, setEjecutarConsulta }) => {
 
             ) : (
                 <>
-                    <td>{producto._id}</td>
+                    <td>{producto._id.slice(19)}</td>
                     <td>{producto.descripcion}</td>
-                    <td>{producto.valorUnitario}</td>
+                    <td>{'$ ' + producto.valorUnitario}</td>
                     <td>{producto.estado}</td>
                 </>
             )}

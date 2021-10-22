@@ -1,8 +1,8 @@
 import axios from "axios";
 import 'react-toastify/dist/ReactToastify.css';
 
-//const baseUrl = ${baseUrl}
-const baseUrl = 'https://thawing-plateau-10491.herokuapp.com'
+const baseUrl = 'http://localhost:5000'
+//const baseUrl = 'https://thawing-plateau-10491.herokuapp.com'
 
 const getToken = () => {
     return `Bearer ${localStorage.getItem('token')}`;
