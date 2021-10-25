@@ -88,7 +88,7 @@ const FormVentas = () => {
     return (
         <div className='flex sm:flex-col flex-col justify-center sm:max-w-screen-sm md:w-full h-full pt-8'>
             <form ref={form} onSubmit={submitForm} className='w-full'>
-                <div className='grid grid-cols-3 gap-2'>
+                <div className='grid grid-cols-2 gap-2'>
                     <div className="formGeneral">
                         <label htmlFor="fechaVenta" className="textoGeneral">Fecha de venta</label>
                         <input type='date' className="inputGeneral" name="fechaVenta" required></input>
@@ -114,7 +114,7 @@ const FormVentas = () => {
 
                 <div className='flex flex-col items-center w-full'>
 
-                    <TablaProductos productos={productos} setProductos={setProductos} setProductosTabla={setProductosTabla} />
+                    <TablaProductos productos={productos} setProductos={setProductos} setProductosTabla={setProductosTabla}/>
 
                     <div className='flex flex-row w-full justify-evenly'>
                         <div className="formGeneral">
